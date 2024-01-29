@@ -1,0 +1,124 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    color: #fff;
+    transform: translateY(-100%);
+    transition: transform 0.3s, color 0.5s;
+}
+.header.show {
+    transform: translateY(0);
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+.logo {
+    width: 100px;
+
+    a {
+        display: block;
+        padding: 17px 0;
+
+        img {
+            width: 100%;
+            filter: brightness(0) invert(1);
+            transition: filter 0.5s;
+        }
+    }
+}
+.header.dark {
+    color: #000;
+
+    .logo img {
+        filter: brightness(0) invert(0);
+    }
+    .ico_lang svg path {
+        stroke: #000;
+    }
+
+    .gnb .lang-main::after {
+        background: url(../images/arrow_down_bk.svg) no-repeat center/contain;
+    }
+
+    .gnb .lang-list {
+        background-color: #fff;
+        border-color: #c5c5c5;
+    }
+}
+
+.gnb {
+    display: flex;
+    align-items: center;
+
+    a {
+        display: inline-block;
+        padding: 23px 25px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    .lang {
+        position: relative;
+    }
+
+    .lang-main {
+        display: flex;
+        align-items: center;
+        padding: 20px 0 18px 25px;
+
+        .tit {
+            display: inline-block;
+            margin: 0 5px;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: url(../images/arrow_down.svg) no-repeat center / contain;
+        }
+    }
+    .ico_lang {
+    }
+
+    .lang-list {
+        position: absolute;
+        right: 0;
+        top: 53px;
+        text-align: center;
+        background-color: #000;
+        border: 1px solid #5a5a5a;
+        border-radius: 6px;
+        transition: all 0.3s;
+
+        display: none;
+        // opacity: 0;
+        // visibility: hidden;
+
+        a {
+            display: block;
+            padding: 2px 14px 4px 13px;
+            font-size: 18px;
+            line-height: 1.33;
+            font-weight: 600;
+            opacity: 0.2;
+        }
+        li:first-child a {
+            padding-top: 6px;
+            padding-bottom: 2px;
+        }
+        a.on {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.headline {
+    font-size: 72px;
+    line-height: 1.28;
+    font-weight: 600;
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+%absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
